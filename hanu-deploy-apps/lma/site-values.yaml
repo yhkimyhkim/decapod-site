@@ -8,7 +8,7 @@ global:
     taco-lma: enabled
   clusterName: cluster.local
   storageClassName: rbd
-  repository: https://openinfradev.github.io/hanu-helm-repo/
+  repository: https://openinfradev.github.io/helm-repo/
   serviceScrapeInterval: 30s
   defaultPassword: password
   defaultUser: taco
@@ -23,7 +23,9 @@ charts:
 - name: prometheus
   override:
     kubeEtcd.endpoints:
-    - 172.27.1.222
+    - 192.168.30.150
+    - 192.168.30.151
+    - 192.168.30.152
     prometheus.prometheusSpec.storageSpec.volumeClaimTemplate.spec.storageClassName: $(storageClassName)
     prometheus.prometheusSpec.storageSpec.volumeClaimTemplate.spec.resources.requests.storage: 10Gi
     prometheus.prometheusSpec.retention: 2d
