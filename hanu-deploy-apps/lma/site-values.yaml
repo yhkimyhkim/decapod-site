@@ -68,7 +68,7 @@ charts:
     elasticsearch.nodeSets.master.limitCpu: 2
     elasticsearch.nodeSets.master.limitMem: 4Gi
     elasticsearch.nodeSets.master.pvc.storageClassName: $(storageClassName)
-    elasticsearch.nodeSets.master.pvc.size: 1Gi
+    elasticsearch.nodeSets.master.pvc.size: 10Gi
 
     elasticsearch.nodeSets.hotdata.nodeSelector: $(nodeSelector)
     elasticsearch.nodeSets.hotdata.count: 1
